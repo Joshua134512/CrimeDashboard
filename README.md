@@ -14,6 +14,6 @@ Kat Amundson
 ## Folders
 
 ## Dataset URLS(Crime Data from 2020 to Present)
-
+## Starting on March 7th, 2024, the Los Angeles Police Department (LAPD) will adopt a new Records Management System for reporting  crimes and arrests.
 https://catalog.data.gov/dataset/crime-data-from-2020-to-present
 
