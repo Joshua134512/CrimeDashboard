@@ -1,0 +1,4 @@
+[data.la]
+    url = 'https://data.lacity.org/api/views/amvf-fr72/rows.csv?accessType=DOWNLOAD'
+[data.ny]
+    url = 'https://data.cityofnewyork.us/api/views/uip8-fykc/rows.csv?accessType=DOWNLOAD'
