@@ -2,10 +2,3 @@
     url = 'https://data.lacity.org/api/views/amvf-fr72/rows.csv?accessType=DOWNLOAD'
 [data.ny]
     url = 'https://data.cityofnewyork.us/api/views/uip8-fykc/rows.csv?accessType=DOWNLOAD'
-
-[options]
-    download = 'all' 
-        #set to one of the following:
-            #all - download all new files
-            #none - do not download any files
-            #new - only download ones that aren't already downloaded

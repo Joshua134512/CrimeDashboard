@@ -24,6 +24,6 @@ class Extractor:
     
     def download_csv(self) -> str:
         #Reads from url, returns csv string
-        data = self.downloadData()
+        data = self.download_data()
         return data.to_csv()
 

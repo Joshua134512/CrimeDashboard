@@ -1,0 +1,15 @@
+commands:
+  - name: download_files
+    description: downloads all data files
+    message: Redownloading all files
+    functions:
+      - description: download all files
+        function: download_files
+  
+  - name: refresh_files
+    description: downloads any new data files available
+    message: Downloading any new files available
+    functions:
+      - description: download new files
+        function: download_files
+        download_option: new
