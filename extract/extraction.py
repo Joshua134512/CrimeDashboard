@@ -4,30 +4,26 @@ from os import path,curdir
 
 ROOT = path.abspath(curdir)
 
-
+#TODO add option to read from path, download csv directly
 class Extractor:
-    def __init__(self, city: str, file: None|str):
-        self.url = settings.data[city]['url']
-        if  file:
-            self.file = open(file, 'w')
-        else: 
-            ext = 'data/' + city + '.csv'
-            self.file = open(path.join(ROOT, ext),'w')
+    def __init__(self, url: str):
+        self.url = url
 
     def __enter__(self):
+        #Init
         return self
     
     def __exit__(self, exc_type, exc_value, traceback):
-        if self.file:
-            self.file.close()
         if exc_value:
             print(exc_value)
     
-    def downloadData(self) -> pd.DataFrame:
+    def download_data(self) -> pd.DataFrame:
+        #Reads from url, returns data frame
         data = pd.read_csv(self.url)
         return data
     
-    def writeToFile(self):
+    def download_csv(self) -> str:
+        #Reads from url, returns csv string
         data = self.downloadData()
-        self.file.write(data.to_csv())
+        return data.to_csv()
 
