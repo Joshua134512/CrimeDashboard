@@ -1,19 +1,10 @@
 from extraction.extractor import Extractor
 from config import settings
-from os import path,curdir
+from os import path,curdir,makedirs
 
 ROOT = path.abspath(curdir)
 
-def download_file(city = None, url = None, file = None, **_):
-    if url:
-        url = url
-    elif city:
-        url = settings.data[city]["url"]
-    if file:
-        filepath = file
-    else: 
-        ext = path.join('data', city + '.csv')
-        filepath = path.join(ROOT, ext)
+def download_file(url: str, filepath: str, **_):
     with Extractor(url) as extract:
         contents = extract.download_csv()
     with open(filepath, 'w') as writer:
@@ -25,12 +16,15 @@ def download_files(**kwargs):
     source = kwargs.get('source') or 'data'
     files = settings[source]
     for key in files:
-        ext = f'{source}/' + key + '.csv'
-        file = path.join(ROOT, ext)
+        file = key + '.csv'
+        folderpath = path.join(ROOT, source)
+        if not path.exists(folderpath):
+            makedirs(folderpath)
+        filepath = path.join(folderpath, file)
         if download_option == 'all':
             print(f"Downloading {key} data file")
             url = settings.data[key]["url"]
-            download_file(None, url, file)
+            download_file(url, filepath)
         elif download_option == 'new':
             if path.exists(file):
                 print(f"{key} data file already downloaded: Skipping")
