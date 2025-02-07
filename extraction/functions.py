@@ -31,5 +31,5 @@ def download_files(**kwargs):
             else:
                 print(f"Downloading {key} data file")
                 url = settings.data[key]["url"]
-                download_file(None, url, file)
+                download_file(url, file)
     print("Downloads complete")
