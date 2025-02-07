@@ -5,6 +5,7 @@ from os import path,curdir
 ROOT = path.abspath(curdir)
 
 #TODO add option to read from path, download csv directly
+#This class is used for accessing urls and returning data frames or raw data.
 class Extractor:
     def __init__(self, url: str):
         self.url = url

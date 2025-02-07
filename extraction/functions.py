@@ -12,7 +12,7 @@ def download_file(city = None, url = None, file = None, **_):
     if file:
         filepath = file
     else: 
-        ext = 'data/' + city + '.csv'
+        ext = path.join('data', city + '.csv')
         filepath = path.join(ROOT, ext)
     with Extractor(url) as extract:
         contents = extract.download_csv()
