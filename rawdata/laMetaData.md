@@ -23,15 +23,15 @@ Charge Group Code - Category of charge, not use\
 Charge Group Description - Description of charge group, not used\
 Arrest Type Code - Code for arrest type, not used\
 Charge - Charge individual was arrested for\
-Charge Description - Description of charges, not using\
-Disposition Description - Disposition of arrest, not using\
+Charge Description - Description of charges, not used\
+Disposition Description - Disposition of arrest, not used\
 Address - Approximate address where arrest occured\
 Cross Street - Approximate cross street of address\
-LAT - Latitude, not using\
-LON - Longitude, not using\
-Location - Longitude and Latitude, not using\
-Booking Date - Date booked at detention facility, not using\
-Booking Time - ..., not using\
-Booking Location - ..., not using\
-Booking Location Code - ..., not using\
+LAT - Latitude, not used\
+LON - Longitude, not used\
+Location - Longitude and Latitude, not used\
+Booking Date - Date booked at detention facility, not used\
+Booking Time - ..., not used\
+Booking Location - ..., not used\
+Booking Location Code - ..., not used\
 

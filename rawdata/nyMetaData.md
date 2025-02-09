@@ -18,9 +18,9 @@ JURISDICTION_CODE: Jurisdiction responsible for arrest, not used\
 AGE_GROUP: Range that includes perpetrators age\
 PERP_SEX: Sex of perpetrator\
 PERP_RACE: Race of perpetrator\
-X_COORD_CD, not using\
-Y_COORD_CD, not using\
-Latitude, not using\
-Longitude, not using\
-New Georeferenced Column, Combination of longitude and latitude, not using
+X_COORD_CD, not used\
+Y_COORD_CD, not used\
+Latitude, not used\
+Longitude, not used\
+New Georeferenced Column, Combination of longitude and latitude, not used
 
