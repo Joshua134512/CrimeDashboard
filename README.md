@@ -15,6 +15,11 @@ Kat Amundson
     - katamundson
 
 ## Folders
+Execution: This can be used for creating sequences of functions to execute in order\
+Extraction: This accesses data and writes to files\
+Transformation: Will be used for cleaning and transforming data\
+Data: Location where raw data will be written to when extracting (automatically created when downloading data, not kept in repository)\
+Rawdata: Holds example data files and metadata for our datasets\
 
 ## Dataset URLS
 https://catalog.data.gov/dataset/arrest-data-from-2020-to-present 
