@@ -1,7 +1,7 @@
 import yaml
 from importlib import import_module
 
-def execute_functions(name = 'test'):
+def execute_functions(name: str):
     functions = None
     with open('execution\commands.yml', 'r') as f:
         data = yaml.full_load(f)
@@ -12,7 +12,8 @@ def execute_functions(name = 'test'):
                 print(command.get('message'))
             break
     if functions == None:
-        raise Exception('No function found')
+        e = f"No command with name {name} found"
+        raise Exception(e)
     for kwargs in functions:
         if kwargs.get('message'):
             print(kwargs.get('message'))
