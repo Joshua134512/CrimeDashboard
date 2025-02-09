@@ -1,5 +1,3 @@
-from extraction.functions import download_files
-from config import settings
 from execution.execute import execute_functions, list_commands
 import sys
 
