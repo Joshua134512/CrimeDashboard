@@ -23,3 +23,5 @@ https://catalog.data.gov/dataset/arrest-data-from-2020-to-present
 https://catalog.data.gov/dataset/nypd-arrest-data-year-to-date/resource/c48f1a1a-5efb-4266-9572-769ed1c9b472 
 
 https://catalog.data.gov/dataset/2010-census-populations-by-zip-code
+
+https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/downloads
