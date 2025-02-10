@@ -1,4 +1,4 @@
-from extraction.extractor import Extractor
+from extraction.Extractor import Extractor
 from config import settings
 from os import path,curdir,makedirs
 
@@ -26,10 +26,10 @@ def download_files(**kwargs):
             url = settings.data[key]["url"]
             download_file(url, filepath)
         elif download_option == 'new':
-            if path.exists(file):
+            if path.exists(filepath):
                 print(f"{key} data file already downloaded: Skipping")
             else:
                 print(f"Downloading {key} data file")
                 url = settings.data[key]["url"]
-                download_file(url, file)
+                download_file(url, filepath)
     print("Downloads complete")
