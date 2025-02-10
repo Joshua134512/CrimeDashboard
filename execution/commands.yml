@@ -1,15 +1,14 @@
 commands:
   - name: download_files
     description: downloads all data files
-    message: Redownloading all files
+    message: Downloading files
     functions:
-      - description: download all files
+      - description: download arrest count data files
         function: download_files
-  
-  - name: refresh_files
-    description: downloads any new data files available
-    message: Downloading any new files available
-    functions:
-      - description: download new files
+        url: https://api.usa.gov/crime/fbi/cde/arrest/state/{state}/all?type=counts&from=01-2004&to=02-2005&API_KEY={api_key}
+        folder: arrests
+      - description: download homicide data files
         function: download_files
-        download_option: new
+        url: https://api.usa.gov/crime/fbi/cde/shr/state/{state}?type=counts&from=01-2020&to=12-2024&API_KEY={api_key}
+        folder: homicides
+

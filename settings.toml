@@ -1,2 +1,2 @@
-[data.fbi]
+[fbi]
     url = "https://api.usa.gov/crime/fbi/cde"
