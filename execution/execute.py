@@ -1,9 +1,10 @@
 import yaml
+from os import path
 from importlib import import_module
 
 def execute_functions(name: str):
     functions = None
-    with open('execution\commands.yml', 'r') as f:
+    with open(path.join('execution','commands.yml'), 'r') as f:
         data = yaml.full_load(f)
     for command in data.get('commands'):
         if command.get('name') == name:

@@ -12,3 +12,9 @@ commands:
         url: https://api.usa.gov/crime/fbi/cde/shr/state/{state}?type=counts&from=01-2020&to=12-2024&API_KEY={api_key}
         folder: homicides
 
+  - name: access_test_database
+    description: use to interact with the test database 
+    functions:
+      - description: execute a custom sql script
+        module: transformation.functions
+        function: execute_custom_sql
