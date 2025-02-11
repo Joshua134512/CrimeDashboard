@@ -1,4 +1,5 @@
 import sqlite3
+import pandas as pd
 
 class Database:
     def __init__(self, database: str):
@@ -13,4 +14,7 @@ class Database:
         return exc_value
     
     def execute_sql(self, sql):
-        self.cursor.execute(sql)
+        return self.cursor.execute(sql)
+    
+    def table_from_dataframe(self, dataframe: pd.DataFrame, table):
+        dataframe.to_sql(table, self.connection)

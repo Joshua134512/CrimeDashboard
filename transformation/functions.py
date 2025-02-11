@@ -1,4 +1,4 @@
-from transformation.SQL import Database
+from connectors.SQL import Database
 from os import path,curdir
 
 ROOT = path.abspath(curdir)
@@ -7,8 +7,7 @@ def execute_sql_from_file(file: str, database = "test.db", **_):
     filepath = path.join(ROOT, 'transformation', 'resources', file)
     with open(filepath, 'r') as f:
         sql = f.read()
-    with Database(database) as db:
-        db.execute_sql(sql)
+    execute_sql(sql, database)
     return
 
 def execute_sql(sql: str, database = "test.db", **_):
