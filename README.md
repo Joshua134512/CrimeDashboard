@@ -31,3 +31,5 @@ https://catalog.data.gov/dataset/2010-census-populations-by-zip-code
 https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/downloads
 
 https://api.data.gov/signup/
+
+https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/docApi
