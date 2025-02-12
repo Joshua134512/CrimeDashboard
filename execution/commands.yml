@@ -5,11 +5,11 @@ commands:
     functions:
       - description: download arrest count data files
         function: download_files
-        url: https://api.usa.gov/crime/fbi/cde/arrest/state/{state}/all?type=counts&from=01-2004&to=02-2005&API_KEY={api_key}
+        url: https://api.usa.gov/crime/fbi/cde/arrest/state/{state}/all?type=counts&from=01-2024&to=12-2024&API_KEY={api_key}
         folder: arrests
       - description: download homicide data files
         function: download_files
-        url: https://api.usa.gov/crime/fbi/cde/shr/state/{state}?type=counts&from=01-2020&to=12-2024&API_KEY={api_key}
+        url: https://api.usa.gov/crime/fbi/cde/shr/state/{state}?type=counts&from=01-2024&to=12-2024&API_KEY={api_key}
         folder: homicides
 
   - name: access_test_database
