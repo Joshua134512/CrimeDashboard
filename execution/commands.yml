@@ -18,3 +18,11 @@ commands:
       - description: execute a custom sql script
         module: transformation.functions
         function: execute_custom_sql
+
+  - name: test
+    description: test table from file
+    functions:
+      - description: create table from a file
+        function: file_to_table
+        filepath: "c:users"
+        table: test

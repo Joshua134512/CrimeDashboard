@@ -21,12 +21,12 @@ class Extractor:
             print(exc_value)
     
     def get_data(self) -> pd.DataFrame:
-        #Reads from url, returns data frame
-        data = pd.read_csv(self.source)
+        #Reads from file, returns data frame
+        data = pd.read_json(self.source)
         return data
     
-    def get_csv(self) -> bytes:
-        #Reads from url or path, returns csv string
+    def get_file(self) -> bytes:
+        #Reads from url or path, returns bytes
         if isinstance(self.source, str):
             response = requests.get(self.source)
             rtn = response.content
@@ -35,7 +35,7 @@ class Extractor:
                 rtn = f.read()
         return rtn
     
-    def to_sql(self):
+    def to_sql(self, table, database):
         df = self.get_data()
-        with Database("test.db") as db:
-            db.table_from_dataframe(df, "test")
+        with Database(database) as db:
+            db.table_from_dataframe(df, table)

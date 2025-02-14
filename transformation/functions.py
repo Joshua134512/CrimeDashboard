@@ -23,6 +23,7 @@ def execute_custom_sql(database = "test.db", **_):
                 break
             else:
                 try: 
-                    db.execute_sql(userIn)
+                    results = db.execute_sql(userIn)
+                    print(results.fetchall())
                 except:
                     print("SQL Error")

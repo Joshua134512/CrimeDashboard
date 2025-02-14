@@ -17,4 +17,4 @@ class Database:
         return self.cursor.execute(sql)
     
     def table_from_dataframe(self, dataframe: pd.DataFrame, table):
-        dataframe.to_sql(table, self.connection)
+        print(dataframe.to_sql(table, self.connection))
