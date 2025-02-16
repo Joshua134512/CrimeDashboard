@@ -27,3 +27,20 @@ def execute_custom_sql(database = "test.db", **_):
                     print(results.fetchall())
                 except:
                     print("SQL Error")
+
+def table_from_csv(file, database = "test.db", table = "test", header = None, **_):
+    filepath = path.join(ROOT, 'data', file)
+    with open(filepath, 'r') as f:
+        data = f.read()
+    with Database(database) as db:
+        for row in data.splitlines():
+            if not header:
+                header = row[:-1]
+                sql = f"create table if not exists {table} ({header})"
+                db.execute_sql(sql)
+            else:
+                fRow = ""
+                for item in row[:-1].split(','):
+                    fRow += f"'{item.strip()}',"
+                print(fRow[:-1])
+                db.insert_row(header, fRow[:-1], table)

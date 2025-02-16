@@ -10,6 +10,7 @@ class Database:
         return self
     
     def __exit__(self, exc_type, exc_value, traceback):
+        self.connection.commit()
         self.connection.close()
         return exc_value
     
@@ -18,3 +19,8 @@ class Database:
     
     def table_from_dataframe(self, dataframe: pd.DataFrame, table):
         print(dataframe.to_sql(table, self.connection))
+
+    def insert_row(self, columns, row, table):
+        sql = f"insert into {table} ({columns}) values({row})"
+        print(sql)
+        self.execute_sql(sql)

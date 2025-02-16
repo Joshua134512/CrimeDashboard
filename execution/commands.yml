@@ -20,9 +20,10 @@ commands:
         function: execute_custom_sql
 
   - name: test
-    description: test table from file
+    description: test
     functions:
-      - description: create table from a file
-        function: states_to_table
-        folder: arrests
-        table: test2
+      - description: test
+        module: transformation.functions
+        function: table_from_csv
+        file: Population.csv
+

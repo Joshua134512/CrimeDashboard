@@ -1,8 +1,6 @@
 import pandas as pd
-from config import settings
 from os import path,curdir
 import requests
-from connectors.SQL import Database
 
 ROOT = path.abspath(curdir)
 
@@ -39,8 +37,3 @@ class Extractor:
             with open(self.source, 'rb') as f:
                 rtn = f.read()
         return rtn
-    
-    def to_sql(self, table, database):
-        df = self.get_data_from_json()
-        with Database(database) as db:
-            db.table_from_dataframe(df, table)

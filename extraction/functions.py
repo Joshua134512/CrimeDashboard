@@ -24,18 +24,3 @@ def download_files(url, folder, **_):
         file = f"{state}.json"
         download_file(url, path.join(folderpath, file))
 
-def source_to_table(source, table, database, **_):
-    with Extractor(source) as e:
-        e.to_sql(table, database)
-
-def states_to_table(folder, table, database = "test.db", **_):
-    folderpath = path.join(ROOT, 'data', folder)
-    for state in STATES:
-        file = f"{state}.json"
-        filepath = path.join(folderpath, file)
-        source_to_table(filepath, table, database)
-    pass
-
-def file_to_table(filepath, table, database, **_):
-    fullpath = path.join(ROOT, filepath)
-    source_to_table(fullpath, table, database)
