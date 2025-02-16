@@ -19,19 +19,10 @@ Execution: This can be used for creating sequences of functions to execute in or
 Extraction: This accesses data and writes to files\
 Transformation: Will be used for cleaning and transforming data\
 Data: Location where raw data will be written to when extracting (automatically created when downloading data, not kept in repository)\
-Rawdata: Holds example data files and metadata for our datasets\
+Rawdata: Holds data files and metadata for our datasets\
 
 ## Dataset URLS
-https://catalog.data.gov/dataset/arrest-data-from-2020-to-present 
-
-https://catalog.data.gov/dataset/nypd-arrest-data-year-to-date/resource/c48f1a1a-5efb-4266-9572-769ed1c9b472 
-
-https://catalog.data.gov/dataset/2010-census-populations-by-zip-code
-
-https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/downloads
-
-https://api.data.gov/signup/
-
-https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/docApi
-
-https://bjs.ojp.gov/topics/recidivism-and-reentry
+https://www.statsamerica.org/sip/rank_list.aspx?rank_label=pop1 
+https://worldpopulationreview.com/state-rankings/quality-of-life-by-state 
+https://www.datapandas.org/ranking/recidivism-rates-by-state#table 
+https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/docApi 
