@@ -20,9 +20,14 @@ class Extractor:
         if exc_value:
             print(exc_value)
     
-    def get_data(self) -> pd.DataFrame:
+    def get_data_from_json(self) -> pd.DataFrame:
         #Reads from file, returns data frame
         data = pd.read_json(self.source)
+        return data
+    
+    def get_data_from_csv(self) -> pd.DataFrame:
+        #Reads from file, returns data frame
+        data = pd.read_csv(self.source)
         return data
     
     def get_file(self) -> bytes:
@@ -36,6 +41,6 @@ class Extractor:
         return rtn
     
     def to_sql(self, table, database):
-        df = self.get_data()
+        df = self.get_data_from_json()
         with Database(database) as db:
             db.table_from_dataframe(df, table)
