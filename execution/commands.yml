@@ -5,11 +5,11 @@ commands:
     functions:
       - description: download arrest count data files
         function: download_files
-        url: https://api.usa.gov/crime/fbi/cde/arrest/state/{state}/all?type=counts&from=01-2024&to=12-2024&API_KEY={api_key}
+        url: https://api.usa.gov/crime/fbi/cde/arrest/state/{state}/all?type=counts&from=01-2023&to=12-2023&API_KEY={api_key}
         folder: arrests
       - description: download homicide data files
         function: download_files
-        url: https://api.usa.gov/crime/fbi/cde/shr/state/{state}?type=counts&from=01-2024&to=12-2024&API_KEY={api_key}
+        url: https://api.usa.gov/crime/fbi/cde/shr/state/{state}?type=counts&from=01-2023&to=12-2023&API_KEY={api_key}
         folder: homicides
 
   - name: access_test_database
@@ -18,3 +18,12 @@ commands:
       - description: execute a custom sql script
         module: transformation.functions
         function: execute_custom_sql
+
+  - name: test
+    description: test
+    functions:
+      - description: test
+        module: transformation.functions
+        function: table_from_csv
+        file: Population.csv
+

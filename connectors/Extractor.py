@@ -1,8 +1,6 @@
 import pandas as pd
-from config import settings
 from os import path,curdir
 import requests
-from connectors.SQL import Database
 
 ROOT = path.abspath(curdir)
 
@@ -20,13 +18,18 @@ class Extractor:
         if exc_value:
             print(exc_value)
     
-    def get_data(self) -> pd.DataFrame:
-        #Reads from url, returns data frame
+    def get_data_from_json(self) -> pd.DataFrame:
+        #Reads from file, returns data frame
+        data = pd.read_json(self.source)
+        return data
+    
+    def get_data_from_csv(self) -> pd.DataFrame:
+        #Reads from file, returns data frame
         data = pd.read_csv(self.source)
         return data
     
-    def get_csv(self) -> bytes:
-        #Reads from url or path, returns csv string
+    def get_file(self) -> bytes:
+        #Reads from url or path, returns bytes
         if isinstance(self.source, str):
             response = requests.get(self.source)
             rtn = response.content
@@ -34,8 +37,3 @@ class Extractor:
             with open(self.source, 'rb') as f:
                 rtn = f.read()
         return rtn
-    
-    def to_sql(self):
-        df = self.get_data()
-        with Database("test.db") as db:
-            db.table_from_dataframe(df, "test")
