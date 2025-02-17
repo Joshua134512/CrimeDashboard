@@ -6,3 +6,7 @@
 
  ### Technology Plan
  We are using python for most processes. It will be used for downloading our data and the sqlite3 library will be used to host a database for cleaning and transforming data within the python program. We are planning on using power bi for a dashboard and are still looking into how that could work. From our research so far we think it should be possible to run our python script inside power bi and access the datasets, but we are still looking into the specifics of that process.  
+
+
+ ### Project Goals
+ Our project aims to investigate how crime rates and recidivism rates are influenced by various demographic and economic factors. Specifically, we seek to understand the relationship between population size, economic status, quality of life, and crime trends, using census and economic data to identify potential correlations. Our main question is: How are crime rates and recidivism rates affected by other demographic information? The intended audience for this research includes future classes studying crime and sociology, as well as a PSA that could help inform communities and policy makers.

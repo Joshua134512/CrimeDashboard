@@ -42,5 +42,4 @@ def table_from_csv(file, database = "test.db", table = "test", header = None, **
                 fRow = ""
                 for item in row[:-1].split(','):
                     fRow += f"'{item.strip()}',"
-                print(fRow[:-1])
                 db.insert_row(header, fRow[:-1], table)

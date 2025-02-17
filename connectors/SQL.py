@@ -16,11 +16,7 @@ class Database:
     
     def execute_sql(self, sql):
         return self.cursor.execute(sql)
-    
-    def table_from_dataframe(self, dataframe: pd.DataFrame, table):
-        print(dataframe.to_sql(table, self.connection))
 
     def insert_row(self, columns, row, table):
         sql = f"insert into {table} ({columns}) values({row})"
-        print(sql)
         self.execute_sql(sql)
