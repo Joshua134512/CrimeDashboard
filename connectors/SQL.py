@@ -1,5 +1,4 @@
 import sqlite3
-import pandas as pd
 
 class Database:
     def __init__(self, database: str):

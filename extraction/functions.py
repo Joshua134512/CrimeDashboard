@@ -15,7 +15,7 @@ def download_file(url: str, filepath: str, **_):
 
 def download_files(url, folder, **_):
     api_key = settings.fbi.key
-    folderpath = path.join(ROOT, "data", folder)
+    folderpath = path.join(ROOT, "data", "working", folder)
     if not path.exists(folderpath):
         makedirs(folderpath)
     for state in STATES:

@@ -1,0 +1,2 @@
+These our json files with arrests per month in each state, we will be parsing these and converting them to csv files.
+These came from the fbi api. https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/docApi d

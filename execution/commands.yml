@@ -19,11 +19,53 @@ commands:
         module: transformation.functions
         function: execute_custom_sql
 
-  - name: test
-    description: test
+  - name: retrieve_raw_data
+    description: move files from rawdata to working
     functions:
-      - description: test
+      - description: retrieve population data
+        module: transformation.functions
+        function: retrieve_raw_data
+        file: Population.csv
+      - description: retrieve qol data
+        module: transformation.functions
+        function: retrieve_raw_data
+        file: QualityOfLife.csv
+      - description: retrieve recidivism data
+        module: transformation.functions
+        function: retrieve_raw_data
+        file: Recidivism.csv
+
+  - name: load_to_database
+    description: load data files into the database
+    functions:
+      - description: load population data
         module: transformation.functions
         function: table_from_csv
         file: Population.csv
+        table: population
+      - description: load qol data
+        module: transformation.functions
+        function: table_from_csv
+        file: QualityOfLife.csv
+        table: qol
+      - description: load recidivism data
+        module: transformation.functions
+        function: table_from_csv
+        file: Recidivism.csv
+        table: recidivism
+    
+  - name: stage_data
+    description: create staging table with all data
+    functions:
+      - description: create stage table
+        module: transformation.functions
+        function: execute_sql_from_file
+        file: stage.sql
 
+  - name: test
+    description: test
+    functions: 
+      - module: transformation.functions
+        function: table_to_file
+        file: data.csv
+        table: test2
