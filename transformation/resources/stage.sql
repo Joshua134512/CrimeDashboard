@@ -11,5 +11,5 @@ create table stage as select p.state,
     q.qualityoflifesafety
  from
     population as p
-        inner join recidivism as r on p.state = r.state
-        inner join qol as q on q.state = p.state;
+        outer left join recidivism as r on p.state = r.state
+        outer left join qol as q on p.state = q.state;
