@@ -1,4 +1,4 @@
-create table staging as select p.state,
+create table stage as select p.state,
     r.recidivismrate,
     r.prisonpopulation,
     r.imprisonmentrate,

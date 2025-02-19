@@ -68,4 +68,4 @@ commands:
       - module: transformation.functions
         function: table_to_file
         file: data.csv
-        table: staging
+        table: stage
