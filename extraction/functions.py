@@ -13,14 +13,15 @@ def download_file(url: str, filepath: str, **_):
         writer.write(data)
     return
 
-def download_files(url, folder, **_):
-    api_key = settings.fbi.key
-    folderpath = path.join(ROOT, "data", folder)
+def download_files(url: str, folder, **kwargs):
+    kwargs['api_key']  = settings.fbi.key
+    folderpath = path.join(ROOT, "data", "working", folder)
     if not path.exists(folderpath):
         makedirs(folderpath)
     for state in STATES:
         print(f"Downloading {state} {folder} data")
-        url = url.format(state = state, api_key = api_key)
+        kwargs['state'] = state
+        stateurl = url.format(**kwargs)
         file = f"{state}.json"
-        download_file(url, path.join(folderpath, file))
+        download_file(stateurl, path.join(folderpath, file))
 

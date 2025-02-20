@@ -1,5 +1,4 @@
 import sqlite3
-import pandas as pd
 
 class Database:
     def __init__(self, database: str):
@@ -12,6 +11,8 @@ class Database:
     def __exit__(self, exc_type, exc_value, traceback):
         self.connection.commit()
         self.connection.close()
+        if exc_value:
+            print(exc_value)
         return exc_value
     
     def execute_sql(self, sql):
