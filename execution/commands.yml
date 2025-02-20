@@ -1,23 +1,16 @@
 commands:
   - name: download_files
-    description: downloads all data files
+    description: downloads all fbi data files
     message: Downloading files
     functions:
       - description: download arrest count data files
         function: download_files
-        url: https://api.usa.gov/crime/fbi/cde/arrest/state/{state}/all?type=counts&from=01-2023&to=12-2023&API_KEY={api_key}
+        url: https://api.usa.gov/crime/fbi/cde/arrest/state/{state}/all?type=totals&from=01-2023&to=12-2023&API_KEY={api_key}
         folder: arrests
       - description: download homicide data files
         function: download_files
-        url: https://api.usa.gov/crime/fbi/cde/shr/state/{state}?type=counts&from=01-2023&to=12-2023&API_KEY={api_key}
+        url: https://api.usa.gov/crime/fbi/cde/shr/state/{state}?type=totals&from=01-2023&to=12-2023&API_KEY={api_key}
         folder: homicides
-
-  - name: access_test_database
-    description: use to interact with the test database 
-    functions:
-      - description: execute a custom sql script
-        module: transformation.functions
-        function: execute_custom_sql
 
   - name: retrieve_raw_data
     description: move files from rawdata to working
@@ -35,7 +28,18 @@ commands:
         function: retrieve_raw_data
         file: Recidivism.csv
 
-  - name: load_to_database
+  - name: load_arrest_data
+    description: load fbi data into database
+    functions:
+      - module: transformation.functions
+        function: execute_sql_from_file
+        file: arrests_ddl.sql
+      - module: transformation.functions
+        function: json_to_table
+        folder: arrests
+        sql_file: arrests.sql
+
+  - name: load_misc_data
     description: load data files into the database
     functions:
       - description: load population data
@@ -69,3 +73,18 @@ commands:
         function: table_to_file
         file: data.csv
         table: stage
+
+  - name: arrests_to_file
+    description: create output file from arrest data
+    functions:
+      - module: transformation.functions
+        function: table_to_file
+        file: arrests.csv
+        table: arrests
+
+  - name: access_test_database
+    description: use to interact with the test database 
+    functions:
+      - description: execute a custom sql script
+        module: transformation.functions
+        function: execute_custom_sql

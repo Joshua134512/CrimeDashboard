@@ -11,6 +11,8 @@ class Database:
     def __exit__(self, exc_type, exc_value, traceback):
         self.connection.commit()
         self.connection.close()
+        if exc_value:
+            print(exc_value)
         return exc_value
     
     def execute_sql(self, sql):
