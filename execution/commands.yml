@@ -88,3 +88,10 @@ commands:
       - description: execute a custom sql script
         module: transformation.functions
         function: execute_custom_sql
+
+  - name: example_command
+    description: example_description
+    functions:
+      - module: transformation.functions
+        function: table_from_csv
+        file: example_file.csv

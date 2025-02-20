@@ -14,16 +14,9 @@ There are a few core components that are needed to create a command.
 First is the name. This is what you will type in the terminal to call the command. It should be all lower case, have no spaces, and no special characters except for underscores '_'. It should not start with a number. Directly underneath the name you can include other entries like a description or message. Then the final entry should be functions and should be blank. The blank entry allows you to create lists of objects underneath of it with an indent and a '-' as seen in the existing commands.
 
 # Functions
-Wherever you see a '-' underneath functions is the start of a new function. You can then list anything needed for that function to execute. This includes the function name, module, and parameters to pass to the function. In python a module simply tells the program what directory to go to. For example there is a functions.py in the transformation folder. The module needed to access functions from that folder is 'transformation.functions'. Note that it doesn't include the file extension. So if I wanted to execute the function table_from_csv I would create an entry in the yml that looks like this:
+Wherever you see a '-' underneath functions is the start of a new function. You can then list anything needed for that function to execute. This includes the function name, module, and parameters to pass to the function. In python a module simply tells the program what directory to go to. For example there is a functions.py in the transformation folder. The module needed to access functions from that folder is 'transformation.functions'. Note that it doesn't include the file extension. The last command in the yml is an example that demonstrates this.
 
-commands:
-    - name: example_command
-      description: example_description
-      functions:
-        - function: table_from_csv
-          file: example_file.csv
-
-Here file is passed into the function so what is actually executed is table_from_csv('example_file.csv')
+Here the file is passed into the function so what is actually executed is table_from_csv('example_file.csv')
 
 And in order to call this you would type 'python main.py example_command'
           
