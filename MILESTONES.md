@@ -17,4 +17,7 @@ We are looking the crime data. We have the dataset of Arrests, homicides, and po
 
 
  ### Project Goals
+ 
  Our project aims to investigate how crime rates and recidivism rates are influenced by various demographic and economic factors. Specifically, we seek to understand the relationship between population size, economic status, quality of life, and crime trends, using census and economic data to identify potential correlations. Our main question is: How are crime rates and recidivism rates affected by other demographic information? The intended audience for this research includes future classes studying crime and sociology, as well as a PSA that could help inform communities and policy makers.
+
+ 
