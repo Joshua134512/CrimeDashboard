@@ -1,4 +1,4 @@
-,State,RecidivismRate,PrisonPopulation,ImprisonmentRate,Population,QualityOfLifeTotalScore,QualityOfLifeQualityOfLife,QualityOfLifeAffordability,QualityOfLifeEconomy,QualityOfLifeEducationAndHealth,QualityOfLifeSafety
+Row_Number,State,RecidivismRate,PrisonPopulation,ImprisonmentRate,Population,QualityOfLifeTotalScore,QualityOfLifeQualityOfLife,QualityOfLifeAffordability,QualityOfLifeEconomy,QualityOfLifeEducationAndHealth,QualityOfLifeSafety
 0,California,,,,39431263,52.03,2,50,15,24,27
 1,Texas,,,,31290831,49,11,34,26,36,33
 2,Florida,24.5,84121,386.21,23372215,58.07,5,33,6,25,15
