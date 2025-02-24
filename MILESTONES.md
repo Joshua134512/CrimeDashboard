@@ -26,4 +26,8 @@ We are looking the crime data. We have the dataset of Arrests, homicides, and po
 
  Our target audience is future data science classes as well as the general public. Our dashboard focuses on factors that affect recidivism which we think can raise awareness to real issues that exist today. This dashboard can be useful for pointing out what problems exist that lead to the high recidivism rates in the US as well as looking at what policies and factors have helped to fix this problem in states with lower recidivism. To communicate our findings and conclusions we will create some charts and models to include in our dashboard that will highlight important points. While doing research we have found other websites with graphs and tables showing similar data to what we might end up with on our dashboard. The kind of questions we want our dashboard to answer involve what different factors can increase and decrease recidivism rates in states. Our main research question is: What factors and policies have negative and positive effects on recidivism rates in the US?
 
+ ### Project Progress
+
+ Our team has been making good progress on achieving our goals for our milestones. Each week we have been planning out our goals for the next Sunday and work on completing them throughout the week. This week we worked on starting our exploratory data analysis. We were able to get Python and Power BI set up on our local machines to start our analysis. Our team has been communicating well. We use our time in class for group discussions about what needs to be done and will communicate outside of class using discord. Moving forward we will start to focus on making models for our data and start to plan out visualizations we want for our dashboard.
+
  
