@@ -47,7 +47,7 @@ create table stage as select p.state,
     a.Offenses_Against_the_Family_and_Children
  from
     population as p
-        outer left join recidivism as r on p.state = r.state
-        outer left join qol as q on p.state = q.state
-        outer left join utility as u on p.state = u.state
-        outer left join arrests as a on u.abbreviation = a.state;
+        inner join recidivism as r on p.state = r.state
+        inner join qol as q on p.state = q.state
+        inner join utility as u on p.state = u.state
+        inner join arrests as a on u.abbreviation = a.state;
