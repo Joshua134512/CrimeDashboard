@@ -7,12 +7,15 @@ ROOT = path.abspath(curdir)
 STATES = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
 
 
-def execute_sql_from_file(file: str, database = "test.db", **_):
+def execute_sql_from_file(file: str, database = "test.db", **kwargs):
     filepath = path.join(ROOT, 'transformation', 'resources', file)
     with open(filepath, 'r') as f:
         sql = f.read()
-    execute_sql(sql, database)
-    return
+    sql = sql.format(**kwargs)
+    commands = sql.split(';')
+    print(f"Executing sql file {file}")
+    for command in commands:
+        execute_sql(command, database)
 
 def execute_sql(sql: str, database = "test.db", **_):
     with Database(database) as db:
