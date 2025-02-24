@@ -3,23 +3,20 @@ from os import path,curdir
 import pandas as pd
 
 ROOT = path.abspath(curdir)
+
 STATES = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
 
 
-def execute_sql_from_file(file: str, database = "test.db", **kwargs):
+def execute_sql_from_file(file: str, database = "test.db", **_):
     filepath = path.join(ROOT, 'transformation', 'resources', file)
     with open(filepath, 'r') as f:
         sql = f.read()
-    sql = sql.format(**kwargs)
-    commands = sql.split(';')
-    print(f"Executing sql file {file}")
-    for command in commands:
-        execute_sql(command, database)
+    execute_sql(sql, database)
+    return
 
 def execute_sql(sql: str, database = "test.db", **_):
     with Database(database) as db:
-        results = db.execute_sql(sql)
-        print(results.fetchall())
+        db.execute_sql(sql)
     return
 
 def execute_custom_sql(database = "test.db", **_):
@@ -29,9 +26,29 @@ def execute_custom_sql(database = "test.db", **_):
             if(userIn == "exit"):
                 break
             else:
-                results = db.execute_sql(userIn)
-                print(results.fetchall())
+                try: 
+                    results = db.execute_sql(userIn)
+                    print(results.fetchall())
+                except:
+                    print("SQL Error")
 
+def table_from_csv(file, database = "test.db", table = "test", header = None, **_):
+    filepath = path.join(ROOT, 'data', 'working', file)
+    with open(filepath, 'r') as f:
+        data = f.read()
+    with Database(database) as db:
+        lines = data.splitlines()
+        for row in lines:
+            row = row.strip()
+            if not header:
+                header = row
+                sql = f"create table if not exists {table} ({header})"
+                db.execute_sql(sql)
+            else:
+                fRow = ""
+                for item in row.split(','):
+                    fRow += f"'{item.strip()}',"  
+                db.insert_row(header, fRow[:-1], table)
 
 def json_to_table(folder, sql_file, database = "test.db", **kwargs):
     for state in STATES:
@@ -44,18 +61,10 @@ def json_to_table(folder, sql_file, database = "test.db", **kwargs):
         execute_sql_from_file('stage_state.sql', database, **kwargs)
         execute_sql_from_file(sql_file, database, **kwargs)
 
-def table_from_csv(file, database = "test.db", table = "test", **_):
-    filepath = path.join(ROOT, 'data', 'working', file)
-    df = pd.read_csv(filepath)
-    print(f"Loading file {filepath} into table {table} in database {database}")
-    with Database(database) as db:
-        df.to_sql(table, db.connection)
-    
 
 def retrieve_raw_data(file, **_):
     source = path.join(ROOT, "data", "rawdata", file)
     target = path.join(ROOT, "data" ,"working", file)
-    print(f"Copying file {file} from {source} to {target}")
     with open(source, 'rb') as f:
         data = f.read()
     with open(target, 'wb') as f:
@@ -66,6 +75,5 @@ def table_to_file(file, database = "test.db", table = "test", **_):
     with Database(database) as db:
         data = pd.read_sql_query(sql, db.connection)
         filepath = path.join(ROOT, 'data', 'output', file)
-        print(f"Unloading table {table} from database {database} into file {filepath}")
         data.to_csv(filepath)
         
