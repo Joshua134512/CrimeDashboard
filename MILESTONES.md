@@ -20,24 +20,7 @@ We are looking the crime data. We have the dataset of Arrests, homicides, and po
  
  Our project aims to investigate how crime rates and recidivism rates are influenced by various demographic and economic factors. Specifically, we seek to understand the relationship between population size, economic status, quality of life, and crime trends, using census and economic data to identify potential correlations. Our main question is: How are crime rates and recidivism rates affected by other demographic information? The intended audience for this research includes future classes studying crime and sociology, as well as a PSA that could help inform communities and policy makers.
 
- ## 2025-02-23
-
- ### Project Goals
-
- Our target audience is future data science classes as well as the general public. Our dashboard focuses on factors that affect recidivism which we think can raise awareness to real issues that exist today. This dashboard can be useful for pointing out what problems exist that lead to the high recidivism rates in the US as well as looking at what policies and factors have helped to fix this problem in states with lower recidivism. To communicate our findings and conclusions we will create some charts and models to include in our dashboard that will highlight important points. While doing research we have found other websites with graphs and tables showing similar data to what we might end up with on our dashboard. The kind of questions we want our dashboard to answer involve what different factors can increase and decrease recidivism rates in states. Our main research question is: What factors and policies have negative and positive effects on recidivism rates in the US?
-
-
-### Exploratory Analysis
+ ### Exploratory Analysis
 
 We are using the Power Bi,  pandas, Matplotlib for making visualization, Sklearn for good for modelling. There is the linear correlation between the different variables in the data.csv. There is  .62 correlation between imprisonment rate and recidivism rate or comparing the imprisonment rate to the quality of life scores. Again, this is only looking at linear correlations, so there may be stronger correlations that are not showing in this map because the data may be non-linear. I have encountered the issue in the dataset mainly in json dataset. We changed  json to css file. Imprisonment rate and Quality of lifeTotal scores are the important predictors of our dataset. We have seen the correlation between the varicose but we haven't discuss trends of our dataset. Delaware  has the highest sum of recidivismRate by state , Mississippi has the highest sum of imprisonmentRate by state, Kentucky has lowest  sum of recidivismRate by state, New Mexico got the highest sum of quality go life safety by state, California has the highest sum of quality of life adorability by state. We haven't got any outliers and missing values yet. By the help of power Bi, we have done basis visualization so far. We haven't discuss what visuals needed to be included for final, so it's not final. 
 
-
-### Modelling
-
-We plan to use linear regression if relationships are linear or follow quadratic/logarithmic trends (e.g., recidivism, state percentages). For non-linear patterns, we will use decision trees, random forests, boosting, and bagging. Ridge and lasso regression will help manage variable relationships. Our response variable is likely recidivism probability. Linear regression fits well with our dashboard for visualization, while tree-based models provide insights through feature importance. We will compare original vs. retrained models to track improvements.
-
- ### Project Progress
-
- Our team has been making good progress on achieving our goals for our milestones. Each week we have been planning out our goals for the next Sunday and work on completing them throughout the week. This week we worked on starting our exploratory data analysis. We were able to get Python and Power BI set up on our local machines to start our analysis. Our team has been communicating well. We use our time in class for group discussions about what needs to be done and will communicate outside of class using discord. Moving forward we will start to focus on making models for our data and start to plan out visualizations we want for our dashboard.
-
- 
