@@ -1,3 +1,4 @@
+drop table stage if exists;
 create table stage as select p.state,
     r.recidivismrate,
     r.prisonpopulation,
