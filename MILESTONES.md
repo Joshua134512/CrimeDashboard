@@ -43,3 +43,8 @@ Our target audience is future data science classes as well as the general public
 
 ### Project Progress
 Our team has been making good progress this week towards completing our exploratory analysis milestones. We have all been using Power BI to create some initial visualizations and to find trends in our data. We have been communicating our findings and visualizations in our groups discord so that we can all have access to them. We have had some issues with Power BI for our group members using macs. There is no Power BI desktop app for ios so they have been using the web service which has had some issues. These group members will be switching to Tableau for their exploratory analysis. We still plan to use Power BI for our final dashboard. Our next steps will be to start making visualizations we may want to use in the dashboard and to start working in some modeling.
+
+### Data Report
+We don't need to rethink our data but we will continue collecting more data as we find more specific areas to research. The data that we have will be used to determine what further research and data will be needed for our project. We did get rid of some of the original data that we collected as we decided to look at states instead of cities. Most of our data will be combined into one file that will help make every easy to organize and find.
+
+
