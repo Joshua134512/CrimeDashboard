@@ -47,4 +47,10 @@ Our team has been making good progress this week towards completing our explorat
 ### Data Report
 We don't need to rethink our data but we will continue collecting more data as we find more specific areas to research. The data that we have will be used to determine what further research and data will be needed for our project. We did get rid of some of the original data that we collected as we decided to look at states instead of cities. Most of our data will be combined into one file that will help make every easy to organize and find.
 
+## 2025-03-09
+
+### Brainstorm Dashboard
+
+Our dashboard highlights factors contributing to recidivism to improve prison systems. It will use interactive elements like drill-through and filters to explore deeper into the data visually. Key questions include what factors increase recidivism. Power BI will be used to create visualizations with DAX functions. The dashboard will be stored in the project repository with instructions in a .MD file for reproducibility. We also plan on using power query and tableau. 
+
 
