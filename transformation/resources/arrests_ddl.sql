@@ -35,4 +35,12 @@ create table arrests (State varchar(255),
     Murder_and_Nonnegligent_Homicide varchar(255),
     Curfew_and_Loitering_Law_Violations varchar(255),
     Prostitution_and_Commercialized_Vice varchar(255),
-    Offenses_Against_the_Family_and_Children varchar(255));
+    Offenses_Against_the_Family_and_Children varchar(255),
+    Asian varchar(255),
+    White varchar(255),
+    Unknown varchar(255),
+    Multiple varchar(255),
+    NotSpecified varchar(255),
+    Black varchar(255),
+    NativeAmerican varchar(255),
+    NativeHawaiianOrPacificIslander varchar(255));

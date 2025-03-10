@@ -1,4 +1,4 @@
-drop table stage if exists;
+drop table if exists stage;
 create table stage as select p.state,
     r.recidivismrate,
     r.prisonpopulation,
@@ -44,7 +44,15 @@ create table stage as select p.state,
     a.Murder_and_Nonnegligent_Homicide,
     a.Curfew_and_Loitering_Law_Violations,
     a.Prostitution_and_Commercialized_Vice,
-    a.Offenses_Against_the_Family_and_Children
+    a.Offenses_Against_the_Family_and_Children,
+    a.Asian,
+    a.White,
+    a.Unknown,
+    a.Multiple,
+    a.NotSpecified,
+    a.Black,
+    a.NativeAmerican,
+    a.NativeHawaiianOrPacificIslander
  from
     population as p
         inner join recidivism as r on p.state = r.state
