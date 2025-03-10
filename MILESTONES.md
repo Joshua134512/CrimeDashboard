@@ -56,7 +56,6 @@ Our dashboard highlights factors contributing to recidivism to improve prison sy
 
 =======
 ### 2025-03-09: Brainstorm Dashboard Milestone
-
 Initial Modeling Approaches
 For this mini-milestone, we will begin by exploring initial modeling techniques to determine whether our data is better suited for linear or nonlinear models.Decision trees and linear regression will serve as our initial baseline models. Decision tree will enable us to capture extra difficult, non-linear correlations between variables, whereas linear regression will simplify and make the relationships among variables simpler to recognize. By evaluating these performances, we're planning to use sophisticated approaches processes like boosting, random forests, or regularized regression strategies like ridge and lasso.
 
