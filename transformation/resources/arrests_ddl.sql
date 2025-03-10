@@ -2,6 +2,7 @@ drop table if exists arrests;
 create table arrests (State varchar(255),
     Male varchar(255),
     Female varchar(255),
+    Total varchar(255),
     Rape varchar(255),
     Arson varchar(255),
     Fraud varchar(255),
