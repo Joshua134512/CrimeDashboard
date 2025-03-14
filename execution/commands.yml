@@ -83,6 +83,24 @@ commands:
         file: data.csv
         table: stage
 
+  - name: stage_derived_data
+    description: stage derived columns
+    functions:
+      - module: transformation.functions
+        function: execute_sql_from_file
+        file: derived_columns_ddl.sql
+      - module: transformation.functions
+        function: execute_sql_from_file
+        file: derived_columns_stage.sql
+
+  - name: derived_data_to_file
+    description: create output file from staging table
+    functions:
+      - module: transformation.functions
+        function: table_to_file
+        file: calculations.csv
+        table: derived_columns_stage
+
   - name: arrests_to_file
     description: create output file from arrest data
     functions:
