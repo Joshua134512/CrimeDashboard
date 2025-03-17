@@ -68,5 +68,7 @@ Quality of life: Kat Amundson
 Specific crimes committed: Macy Schanbacher
 
 Demographic information on people committing the crimes: Joshua Morningstar
->>>>>>> d3844ba (Brainstorm Dashboard Milestone)
 
+## 2025-03-16: Finalize Data Models Milestone and subsection ### Spring Break Plans
+
+Our team will work on individual models over spring break. I will analyze prison-related variables using various modeling approaches to generate visual and statistical insights. Joshua will focus on the demographics of offenders, Kat on quality of life, and Macy on specific crimes committed.
