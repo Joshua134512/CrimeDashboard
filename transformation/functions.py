@@ -7,7 +7,7 @@ ROOT = path.abspath(curdir)
 STATES = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
 
 
-def execute_sql_from_file(file: str, database = "test.db", **kwargs):
+def execute_sql_from_file(file: str, database = "crime.db", **kwargs):
     filepath = path.join(ROOT, 'transformation', 'resources', file)
     with open(filepath, 'r') as f:
         sql = f.read()
@@ -17,12 +17,12 @@ def execute_sql_from_file(file: str, database = "test.db", **kwargs):
     for command in commands:
         execute_sql(command, database)
 
-def execute_sql(sql: str, database = "test.db", **_):
+def execute_sql(sql: str, database = "crime.db", **_):
     with Database(database) as db:
         db.execute_sql(sql)
     return
 
-def execute_custom_sql(database = "test.db", **_):
+def execute_custom_sql(database = "crime.db", **_):
     with Database(database) as db:
         while True:
             userIn = input("Enter script or type exit to end program: ")
@@ -35,7 +35,7 @@ def execute_custom_sql(database = "test.db", **_):
                 except:
                     print("SQL Error")
 
-def table_from_csv(file, database = "test.db", table = "test", header = None, **_):
+def table_from_csv(file, database = "crime.db", table = "test", header = None, **_):
     filepath = path.join(ROOT, 'data', 'working', file)
     with open(filepath, 'r') as f:
         data = f.read()
@@ -53,7 +53,7 @@ def table_from_csv(file, database = "test.db", table = "test", header = None, **
                     fRow += f"'{item.strip()}',"  
                 db.insert_row(header, fRow[:-1], table)
 
-def json_to_table(folder, sql_file, database = "test.db", **kwargs):
+def json_to_table(folder, sql_file, database = "crime.db", **kwargs):
     for state in STATES:
         kwargs['state'] = state
         file = state + '.json'
@@ -73,7 +73,7 @@ def retrieve_raw_data(file, **_):
     with open(target, 'wb') as f:
         f.write(data)
 
-def table_to_file(file, database = "test.db", table = "test", **_):
+def table_to_file(file, database = "crime.db", table = "test", **_):
     sql = f"select * from {table}"
     with Database(database) as db:
         data = pd.read_sql_query(sql, db.connection)
