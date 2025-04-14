@@ -31,6 +31,10 @@ commands:
         module: transformation.functions
         function: retrieve_raw_data
         file: StatesUtilityTable.csv
+      - description: retrieve coefficients from model
+        module: transformation.functions
+        function: retrieve_raw_data
+        file: coefficients.csv
 
   - name: load_arrest_data
     description: load fbi data into database
