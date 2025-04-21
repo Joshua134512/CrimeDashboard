@@ -47,16 +47,18 @@ Our team has been making good progress this week towards completing our explorat
 ### Data Report
 We don't need to rethink our data but we will continue collecting more data as we find more specific areas to research. The data that we have will be used to determine what further research and data will be needed for our project. We did get rid of some of the original data that we collected as we decided to look at states instead of cities. Most of our data will be combined into one file that will help make every easy to organize and find.
 
-<<<<<<< HEAD
-## 2025-03-09
+### Exploratory Analysis
+The relationships between imprisonment rate, recidivism rate, and quality of life scores, with a notable 0.62 correlation between imprisonment and recidivism rates, indicating a moderate linear relationship. Potential non-linear associations may go unnoticed because this research only looks at linear correlations. Delaware has the greatest recidivism rate, Mississippi has the highest imprisonment rate, Kentucky has the lowest recidivism rate, New Mexico has the highest safety score, and California has the highest affordability score, according to state-level statistics. Delaware got 64.50 average of recidivism rate. The is a positive correlation between  Sum of RecidivismRate and Sum of quality of life Total Score by state. The dataset's initial JSON format presented a barrier during processing; it was changed to CSV for easier handling.Thus far, no outliers or missing values have been found. Key predictors in this dataset include imprisonment rate and quality of life total scores, which significantly influence other variables. Initial exploratory analysis using Power BI, Pandas, and Matplotlib has provided basic visualizations, including scatter plots, bar charts, and correlation heatmaps. Further analysis is needed to explore trends more deeply, and while some visualizations have been created, the final dashboard visuals are yet to be decided.
 
 ### Brainstorm Dashboard
+Our dashboard highlights factors contributing to recidivism to improve prison systems. It will use interactive elements like drill-through and filters to explore deeper into the data visually. Key questions include what factors increase recidivism. Power BI will be used to create visualizations with DAX functions. The dashboard will be stored in the project repository with instructions in a .MD file for reproducibility.
 
-Our dashboard highlights factors contributing to recidivism to improve prison systems. It will use interactive elements like drill-through and filters to explore deeper into the data visually. Key questions include what factors increase recidivism. Power BI will be used to create visualizations with DAX functions. The dashboard will be stored in the project repository with instructions in a .MD file for reproducibility. We also plan on using power query and tableau. 
+## 2025-03-09 
 
-=======
-### 2025-03-09: Brainstorm Dashboard Milestone
-Initial Modeling Approaches
+### Brainstorm Dashboard
+Our dashboard highlights factors contributing to recidivism to improve prison systems. It will use interactive elements like drill-through and filters to explore deeper into the data visually. Key questions include what factors increase recidivism. Power BI will be used to create visualizations with DAX functions. The dashboard will be stored in the project repository with instructions in a .MD file for reproducibility. We also plan on using power query and tableau. 
+
+### Initial Modeling Approaches
 For this mini-milestone, we will begin by exploring initial modeling techniques to determine whether our data is better suited for linear or nonlinear models.Decision trees and linear regression will serve as our initial baseline models. Decision tree will enable us to capture extra difficult, non-linear correlations between variables, whereas linear regression will simplify and make the relationships among variables simpler to recognize. By evaluating these performances, we're planning to use sophisticated approaches processes like boosting, random forests, or regularized regression strategies like ridge and lasso.
 
  Research Areas:
@@ -69,6 +71,50 @@ Specific crimes committed: Macy Schanbacher
 
 Demographic information on people committing the crimes: Joshua Morningstar
 
-## 2025-03-16: Finalize Data Models Milestone and subsection ### Spring Break Plans
+### Finalize Data Models
+Finalize the data models by testing both linear and irregular models to see which works better. Use cross-validation, starting with commonly used methods and trying different ones. The response variable is recidivism rate, which is independent, while everything else is explanatory. Obstacles encountered include tech issues. If the model is linear, normality assumptions are necessary; if the model is irregular, no assumptions are needed. Research areas are divided among prison-related variables (Niraj), quality of life (Kat), specific crimes (Macy), and demographics (Joshua).
 
+### Project Progress
+Our team has been making progress towards completing our milestones for this week. We have been working on creating some rough sketches of what we want our final dashboard to look like. We have also started looking into models we would like to create. We have assigned each team member an area to research and explore models for. This week, we have had multiple team members having issues with VS Code, which has caused some minor setbacks. Our next steps will be to continue planning our dashboard and to start creating some models.
+
+## 2025-03-16
+
+### Spring Break Plans
 Our team will work on individual models over spring break. I will analyze prison-related variables using various modeling approaches to generate visual and statistical insights. Joshua will focus on the demographics of offenders, Kat on quality of life, and Macy on specific crimes committed.
+
+### Dashboard Sketch
+The Power BI Web dashboard will illustrate U.S. recidivism by comparing rates with other countries using bar graphs. It will include multiple pages focused on trends, demographics, and policy impacts. Users can interact with the data through filters, hover-over tooltips, and drill-through features for deeper analysis. Key visuals will include bar graphs for comparisons, trend lines to show historical changes, and tables for quick reference. The design will ensure clarity and accessibility for stakeholders.
+
+### Finalize Data Models
+We are focusing on tree based models such as random forest, boosting, bagging etc. To determine hyperparameters we will start with default values and use cross-validation to test multiple values and determine the best. We have a lot of explanatory variables related to demographic information of the prison population, economic and quality of life information related to the states, other stats related to prison population and various other things. Since we are using tree models we do not need to make any assumptions, they work very well with irregular data. Our research question is what factors contibute to recidivism, all of our models will be focusing on this. Our data is spatial and we do have a finished clean dataset but are continuing to add more data as we go.
+
+### Project Progress
+This week our team has been looking into different areas of our data we could use to create models. Each team member has been assigned an area of research, and we have been sharing our findings during class time. We will continue to work on our modeling over the break. When we return, we will focus on finishing our models and creating a rough draft/sketch of our dashboard.
+
+## 2025-03-30
+
+### Finalize Dashboard Sketch
+The dashboard sketch incorporates multiple visualizations to analyze the relationship between
+recidivism rates, imprisonment rates, and quality of life scores across states. It includes
+interactive maps, bar charts, scatterplots, and pie charts, allowing users to filter data by state
+and quality of life metrics. The state-level drill-through page provides a deeper dive into crime
+statistics, recidivism factors, and correlations with demographic variables. While most
+components are functional, some refinements are needed, such as optimizing the crime
+distribution chart for clarity and enabling dynamic filtering for the top 10 crimes per state. Future
+improvements will focus on enhancing interactivity, refining variable selections, and ensuring
+that the dashboard effectively conveys insights through intuitive visual storytelling
+
+## 2025-04-06
+
+### Minimum Viable Dashboard
+Our current project progress so far has included finishing our modelling and creating our minimum viable dashboard. We have a few different models that do a good job of predicting recidivism and we have used some of the info from these to decide what variables would be best to include in our dashboard. Our primary plan for the future is to continue working on the dashboard and potentially improving our models and looking for ways to finalize and improve our project. Overall, we are pretty close to done and are mainly focused on the creation of our final dashboard and finding other things we can improve upon.
+
+## 2025-04-13
+
+### Add Models to Dashboard
+Our model uses lasso, so the predictors that ended up in our model are fewer than what we started with. The ones that ended being kept in our model were; PercentWhite, PercentBlack, PercentAsian, PercentNativeAmerican, QOLScore, PercentOfPopInPrison, PercentViolentCrimes. Our response variable was RecidivismRate. Our goal with this model was to try and determine what factors might be more likely to contribute to recidivism, so we included things such as age, what percent of crimes are violent, and what percent of the population was in prison in addition to other demographic information like ethnicity and gender.
+
+## 2025-04-20
+
+### Dashboard Peer Review
+Currently we have included most of the features that we want in our dashboard and are looking for ways to improve and finalize it. We also want to continue focusing on improving and refining our model. Next steps will be to start working on the presentation while making final adjustments to our model and dashboard.
