@@ -12,5 +12,6 @@ create table derived_columns_stage(
     TotalViolentCrimes varchar(255),
     TotalNonviolentCrimes varchar(255),
     OtherCrimes varchar(255),
-    AverageQOLScore varchar(255)
+    AverageQOLScore varchar(255),
+    PopulationDensity varchar(255)
 )

@@ -11,7 +11,8 @@ insert into derived_columns_stage(
     TotalViolentCrimes,
     TotalNonviolentCrimes,
     OtherCrimes,
-    AverageQOLScore 
+    AverageQOLScore,
+    PopulationDensity
 )
 select 
     State,
@@ -63,5 +64,6 @@ select
         qualityoflifeaffordability+
         qualityoflifeeconomy+
         qualityoflifeeducationandhealth+
-        qualityoflifesafety)/5.0
+        qualityoflifesafety)/5.0,
+    population/SquareMiles
 from stage
