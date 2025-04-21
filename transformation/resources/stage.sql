@@ -54,7 +54,7 @@ create table stage as select p.state,
     a.Black,
     a.NativeAmerican,
     a.NativeHawaiianOrPacificIslander,
-    	a.Male_Age_15,
+    a.Male_Age_15,
 	a.Male_Age_16,
 	a.Male_Age_17,
 	a.Male_Age_18,
@@ -105,10 +105,12 @@ create table stage as select p.state,
 	a.Female_Age_Under_11,
 	a.Female_Age_65_and_over,
 	a.Female_Age_Adult_Other,
-	a.Female_Age_Juvenile_Other
+	a.Female_Age_Juvenile_Other,
+    l.squaremiles
  from
     population as p
         inner join recidivism as r on p.state = r.state
+        inner join landarea as l on p.state = l.state
         inner join qol as q on p.state = q.state
         inner join utility as u on p.state = u.state
         inner join arrests as a on u.abbreviation = a.state;

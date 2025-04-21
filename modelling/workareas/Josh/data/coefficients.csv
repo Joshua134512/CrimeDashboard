@@ -1,8 +1,5 @@
 ,colnames,coefficients
-0,PercentAsian,610.7412678292548
-1,PercentWhite,159.79983460414493
-2,PercentBlack,145.16309742596644
-3,PercentNativeAmerican,172.2811531333191
-4,AverageQOLScore,0.5279162057438498
-5,PercentViolentCrimes,30.442246268789503
-6,PercentOfPopInPrison,-615.6371938982263
+0,PercentBlack,-8.558296641252857
+1,PercentNativeAmerican,8.383183788499021
+2,AverageQOLScore,0.45384811290708443
+3,PopulationDensity,0.005297151015426978

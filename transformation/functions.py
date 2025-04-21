@@ -40,6 +40,8 @@ def table_from_csv(file, database = "crime.db", table = "test", header = None, *
     with open(filepath, 'r') as f:
         data = f.read()
     with Database(database) as db:
+        sql = f"drop table {table}"
+        db.execute_sql(sql)
         lines = data.splitlines()
         for row in lines:
             row = row.strip()

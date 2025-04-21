@@ -31,10 +31,11 @@ commands:
         module: transformation.functions
         function: retrieve_raw_data
         file: StatesUtilityTable.csv
-      - description: retrieve coefficients from model
+      - description: retrieve land area data
         module: transformation.functions
         function: retrieve_raw_data
-        file: coefficients.csv
+        file: landarea.csv
+
 
   - name: load_arrest_data
     description: load fbi data into database
@@ -70,6 +71,11 @@ commands:
         function: table_from_csv
         file: StatesUtilityTable.csv
         table: utility
+      - description: load land area data
+        module: transformation.functions
+        function: table_from_csv
+        file: landarea.csv
+        table: landarea
     
   - name: stage_data
     description: create staging table with all data
