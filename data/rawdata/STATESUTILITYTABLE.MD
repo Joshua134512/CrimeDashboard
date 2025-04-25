@@ -1,0 +1,1 @@
+This table contains state names with their abbreviations, this is used for joining tables.

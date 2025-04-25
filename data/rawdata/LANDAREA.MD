@@ -1,0 +1,1 @@
+This table contains square miles of each state

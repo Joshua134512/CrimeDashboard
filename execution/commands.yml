@@ -36,7 +36,6 @@ commands:
         function: retrieve_raw_data
         file: landarea.csv
 
-
   - name: load_arrest_data
     description: load fbi data into database
     functions:
@@ -119,8 +118,8 @@ commands:
         file: arrests.csv
         table: arrests
 
-  - name: access_test_database
-    description: use to interact with the test database 
+  - name: access_database
+    description: use to interact with the database 
     functions:
       - description: execute a custom sql script
         module: transformation.functions

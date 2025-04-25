@@ -21,6 +21,8 @@ Here the file is passed into the function so what is actually executed is table_
 
 And in order to call this you would type 'python main.py example_command'
           
+# Using the api
+This project uses dynaconf to store secrets. A settings.toml file can be used for public configuration settings, while a settings.local.toml can be used for secrets such as api keys. For readability, anything needed in settings.local.toml should have a blank entry in settings.toml.
 
 ## Team Members
 
