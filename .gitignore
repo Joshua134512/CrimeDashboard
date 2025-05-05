@@ -2,3 +2,4 @@ working
 *pycache*
 *local*
 *.db
+*venv*
