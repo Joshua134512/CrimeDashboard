@@ -8,7 +8,7 @@ class Database:
     def __enter__(self):
         return self
     
-    def __exit__(self, exc_type, exc_value, traceback):
+    def __exit__(self, exc_value, *_):
         self.connection.commit()
         self.connection.close()
         if exc_value:

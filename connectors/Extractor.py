@@ -1,4 +1,3 @@
-import pandas as pd
 from os import path,curdir
 import requests
 
@@ -14,19 +13,9 @@ class Extractor:
         #Init
         return self
     
-    def __exit__(self, exc_type, exc_value, traceback):
+    def __exit__(self, exc_value, *_):
         if exc_value:
             print(exc_value)
-    
-    def get_data_from_json(self) -> pd.DataFrame:
-        #Reads from file, returns data frame
-        data = pd.read_json(self.source)
-        return data
-    
-    def get_data_from_csv(self) -> pd.DataFrame:
-        #Reads from file, returns data frame
-        data = pd.read_csv(self.source)
-        return data
     
     def get_file(self) -> bytes:
         #Reads from url or path, returns bytes
